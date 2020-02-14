@@ -1,0 +1,14 @@
+let id = 1
+
+
+let object1 = { x = 42, y = id }
+let object2 = { x = 17, y = false }
+
+
+let object3 = .foo { x = 17, y = false }
+
+
+def map(f, list) = match list
+  case .nil; .nil
+  case .cons{hd = x, tl = xs}; .cons{hd = f(x), tl = map(f, xs)}
+end
